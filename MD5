@@ -1,0 +1,8 @@
+c21c84534819ef659b4214b372ed3245 *DESCRIPTION
+4200e2c782383105f65e872791d6ec0f *NAMESPACE
+7e1b5060ff018d283574da0cffd74efc *R/AxialBoxplot.R
+cb70d7fe22f2e3014f8689fc92581cf8 *R/CircularBoxplot.R
+574ca8ee8c5ae62dad8466e97a45ca38 *R/CircularTukeyDepth.R
+de1de43e96fb0d92f6f5957170e7426b *man/AxialBoxplot.Rd
+5f58bfa9f52e09ab90e855eca37d5a24 *man/CircularBoxplot.Rd
+b5ec743df4ed5dac0a6def892719d60e *man/CircularTukeyDepth.Rd

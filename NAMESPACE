@@ -1,0 +1,6 @@
+exportPattern("^[[:alpha:]]+")
+import(plotrix, except=c(mtext3d))
+import(MASS)
+import(circular)   #install.packages("circular")     #to use function deg()
+    importFrom("graphics", "par", "plot", "points", "text")
+    importFrom("stats", "median", "na.omit")
