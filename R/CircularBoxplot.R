@@ -1,5 +1,5 @@
 #The CircularBoxplot function produces a box-and-whisker-plot  for circular data, according to the procedure described
-#in Buttarazzi D., Pandolfo G., Porzio G.C. (2018). A boxplot for circular data, Biometrics, under review.
+#in Buttarazzi D., Pandolfo G., Porzio G.C. (2018). A boxplot for circular data, Biometrics.
 
 CircularBoxplot <- function(A, template="degrees", place="none", units="degrees", marg = "large", shrink = 1.5, H=FALSE, stack=FALSE, constant="optimal") {
 
@@ -384,7 +384,7 @@ CircularBoxplot <- function(A, template="degrees", place="none", units="degrees"
         wC <- min(swc)
         draw.arc(0,0,1,wC,QClock,col=1,lwd=2, lty=1)
         draw.radial.line(0.95,1.05,center=c(0,0),wC,col=1,lwd=2)
-        faroutClock <- subset(semicircleClock, semicircleClock>=0 | semicircleClock<fC)
+        faroutClock <- subset(semicircleClock, semicircleClock>=0 & semicircleClock<fC)
       }
       swa <- subset(semicircleAnti, semicircleAnti<=fA)
       swa <- c(swa, QAnti)
@@ -594,6 +594,17 @@ CircularBoxplot <- function(A, template="degrees", place="none", units="degrees"
   else{out$farout = c("no far out values detected")}
 
   out$constant = constant
+
+  summaryStatistics = data.frame(
+                                  CircularMedian = as.numeric(deg(circular(fi, modulo="2pi"))),
+                                  CounterClockwiseHinge = as.numeric(deg(circular(QAnti, modulo="2pi"))),
+                                  ClockwiseHinge = as.numeric(deg(circular(QClock, modulo="2pi"))),
+                                  CounterClockwiseWhisker = as.numeric(deg(circular(wA, modulo="2pi"))),
+                                  ClockwiseWhisker = as.numeric(deg(circular(wC, modulo="2pi")))
+                                )
+
+  out$statistics = summaryStatistics
+
   return(invisible(out))
 
    }

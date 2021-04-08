@@ -52,6 +52,8 @@ CircularBoxplot ( A, template="degrees", place="none", units="degrees", marg=
 \item{farout}{a vector of class circular in radians, containing the values of the
 points lying outside the whiskers.}
 
+\item{statistics}{a dataframe of summary statistics in degrees: circular median, hinges and whiskers.}
+
 \item{constant}{the value of the constant used to draw the boxplot.}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
