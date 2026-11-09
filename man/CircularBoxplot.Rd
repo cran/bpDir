@@ -11,7 +11,7 @@ The CircularBoxplot function produces a box-and-whisker-plot for circular data.
 \usage{
 CircularBoxplot ( A, template="degrees", place="none", units="degrees", marg=
                    "large", shrink = 1.5,  H=FALSE, stack=FALSE, constant=
-                   "optimal")
+                   "optimal", concentration= NULL)
 
 }
 %- maybe also 'usage' for other objects documented here.
@@ -39,6 +39,8 @@ CircularBoxplot ( A, template="degrees", place="none", units="degrees", marg=
   \item{stack}{If \code{TRUE} and H=\code{FALSE}, then far out values are stacked on the circumference.}
 
   \item{constant}{numeric;  the boxplot multiplying factor (or "constant") that determines how far the fences extend out from the box. When \code{"optimal"}(default), it ensures the probability that an observation falls outside the fences (i.e., it will be a far out value) is 0,7\% under a von Mises distribution (see Web Appendix A in Buttarazzi et al., 2018).}
+
+  \item{concentration}{numeric;  if constant = "optimal", this argument can be used to specify the concentration parameter to be used to estimate the boxplot multiplying factor.}
 
 
 %%     ~~Describe \code{x} here~~

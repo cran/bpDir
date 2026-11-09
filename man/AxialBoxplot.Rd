@@ -12,7 +12,7 @@ Draw a boxplot for axial data
 \usage{
 AxialBoxplot(A, template = "degrees", place = "none", marg =
                    "large", stack = FALSE, H = FALSE, shrink = 1.5, units
-                   = "degrees", constant = "optimal", mirror = TRUE)
+                   = "degrees", constant = "optimal", concentration = NULL, mirror = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,6 +37,8 @@ AxialBoxplot(A, template = "degrees", place = "none", marg =
 
 
   \item{constant}{numeric;  the boxplot multiplying factor (or "constant") that determines how far the fences extend out from the box. When \code{"optimal"}(default), it ensures the probability that an observation falls outside the fences (i.e., it will be a far out value) is 0,7\% under a von Mises distribution (see Web Appendix A in Buttarazzi et al., 2018).}
+
+  \item{concentration}{numeric;  if constant = "optimal", this argument can be used to specify the concentration parameter to be used to estimate the boxplot multiplying factor.}
 
 \item{mirror}{If \code{TRUE}, then a second axial boxplot will be plotted on the opposite semi-circle.}
 

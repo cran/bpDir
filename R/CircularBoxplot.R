@@ -1,7 +1,12 @@
 #The CircularBoxplot function produces a box-and-whisker-plot  for circular data, according to the procedure described
 #in Buttarazzi D., Pandolfo G., Porzio G.C. (2018). A boxplot for circular data, Biometrics.
+#' @export
+#' @importFrom stats median na.omit qnorm
+#' @importFrom graphics par points text
+#' @importFrom circular A1inv arrows.circular as.circular circle.control circular conversion.circular deg  is.circular median.circular qvonmises rad rho.circular
+#' @importFrom plotrix draw.arc draw.radial.line
 
-CircularBoxplot <- function(A, template="degrees", place="none", units="degrees", marg = "large", shrink = 1.5, H=FALSE, stack=FALSE, constant="optimal") {
+CircularBoxplot <- function(A, template="degrees", place="none", units="degrees", marg = "large", shrink = 1.5, H=FALSE, stack=FALSE, constant="optimal", concentration = NULL) {
 
   # checking if package are installed, if not they will be installed
   #library(circular) #| install.packages("circular", dep=T)
@@ -12,13 +17,15 @@ CircularBoxplot <- function(A, template="degrees", place="none", units="degrees"
 
 
   if(constant=="optimal"){
-    conc     <- A1inv(rho.circular(A))
-    q1       <- qvonmises(0.25, mu=circular(0), kappa = conc)
-    me       <- qvonmises(0.5 , mu=circular(0), kappa = conc)
-    q3       <- qvonmises(0.75, mu=circular(0), kappa = conc)
+    if (is.null(concentration)) {
+      concentration <- A1inv(rho.circular(A))
+    }
+    q1       <- qvonmises(0.25, mu=circular(0), kappa = concentration)
+    me       <- qvonmises(0.5 , mu=circular(0), kappa = concentration)
+    q3       <- qvonmises(0.75, mu=circular(0), kappa = concentration)
     box      <- range(c(q1,me,q3))
-    q9965    <- qvonmises(1-(0.007/2), mu=circular(0),kappa = conc)
-    q0035    <- qvonmises((0.007/2), mu=circular(0),kappa = conc)
+    q9965    <- qvonmises(1-(0.007/2), mu=circular(0),kappa = concentration)
+    q0035    <- qvonmises((0.007/2), mu=circular(0),kappa = concentration)
     constant <- range(c(q9965,q3))/box
     }
 

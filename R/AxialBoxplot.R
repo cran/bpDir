@@ -1,8 +1,8 @@
 #The AxialBoxplot() function takes a vector "Axial" of class circular containing Axial data (modulo pi) and
 #produces the axial boxplot introduced in Buttarazzi, D., Pandolfo, G., and Porzio, G.C., 2018. A boxplot for circular data. Biometrics. (under review)
-
+#' @export
 #AxialBoxplot main function
-AxialBoxplot <- function(A, template="degrees", place="none", marg = "large", stack=FALSE, H=FALSE , shrink = 1.5, units="degrees", constant="optimal", mirror=TRUE)
+AxialBoxplot <- function(A, template="degrees", place="none", marg = "large", stack=FALSE, H=FALSE , shrink = 1.5, units="degrees", constant="optimal", concentration = NULL, mirror=TRUE)
 {
 
   A2 <- circular(A*2, modulo="2pi")
@@ -16,13 +16,15 @@ AxialBoxplot <- function(A, template="degrees", place="none", marg = "large", st
 
 
   if(constant=="optimal"){
-    conc     <- A1inv(rho.circular(A))
-    q1       <- qvonmises(0.25, mu=circular(0), kappa = conc)
-    me       <- qvonmises(0.5 , mu=circular(0), kappa = conc)
-    q3       <- qvonmises(0.75, mu=circular(0), kappa = conc)
+    if (is.null(concentration)) {
+      concentration <- A1inv(rho.circular(A))
+    }
+    q1       <- qvonmises(0.25, mu=circular(0), kappa = concentration)
+    me       <- qvonmises(0.5 , mu=circular(0), kappa = concentration)
+    q3       <- qvonmises(0.75, mu=circular(0), kappa = concentration)
     box      <- range(c(q1,me,q3))
-    q9965    <- qvonmises(1-(0.007/2), mu=circular(0),kappa = conc)
-    q0035    <- qvonmises((0.007/2), mu=circular(0),kappa = conc)
+    q9965    <- qvonmises(1-(0.007/2), mu=circular(0),kappa = concentration)
+    q0035    <- qvonmises((0.007/2), mu=circular(0),kappa = concentration)
     constant <- range(c(q9965,q3))/box
   }
 

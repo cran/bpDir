@@ -1,4 +1,4 @@
-
+#' @export
 CircularTukeyDepth <- function(x){
 
 AM <- circular::circular((median.circular(x)+pi), modulo="2pi")
