@@ -23,7 +23,9 @@ add_geom <- function(
     r0,
     outlier_point_color,
     outlier_point_size,
-    outlier_point_alpha
+    outlier_point_alpha,
+    bean_outlier_color = "red",
+    bean_outlier_size_factor = 2
 ) {
 
   # Draw the outlier density region for every beans option except
@@ -92,12 +94,13 @@ add_geom <- function(
     )
 
     if (nrow(df_out_beans) > 0) {
+      df_out_beans$size <- df_out_beans$size * bean_outlier_size_factor
       p <- p +
         geom_segment(
           data = df_out_beans,
           aes(x = x, y = y, xend = xend, yend = yend, linewidth = size),
-          color = "black",
-          alpha = 0.65,
+          color = bean_outlier_color,
+          alpha = 0.8,
           lineend = "butt"
         )
     }

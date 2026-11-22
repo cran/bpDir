@@ -1,4 +1,4 @@
-8f671439ff7b0627e10851941aa124ef *DESCRIPTION
+66f8ead5b85dfa1c8a4c6380d944a1f9 *DESCRIPTION
 0fe9956e67ba6ec54bda2f4e76e45c0a *NAMESPACE
 611c555a0e58cc47ad24099f3e7d7a9b *R/AxialBoxplot.R
 7578eb3012a2ac0fa1022f1e1d0f0a5d *R/CircMAD.R
@@ -7,11 +7,11 @@ a0d801b5782b5d36c66227905bc301ef *R/CircularLMS.R
 2c1c180e656c508f389a2f4916be55c5 *R/CircularLTS.R
 f4a31a93e139ef0d2f3a44a6ee9059eb *R/CircularMAD.R
 89975a0778d38fe8c9d6718583698b3b *R/CircularTukeyDepth.R
-c6751c2b0bb8c1b0501d26b264f0dde9 *R/CircularViolinPlot.R
+69d17a3d13b16cb0b459892b68b31b34 *R/CircularViolinPlot.R
 4a814bf0465f46279eb978929533fdf9 *R/EstimateKappa.R
 de9014e487aa628cefac1c1c4bd73f87 *R/EstimateKappaKo.R
 e48ab77d16a300dc58e39a6774648900 *R/EstimateSigma.R
-f1263706a865e829e022ddc3b84ec75b *R/add_geom.R
+d66eca72f784a6ab24a3510c05aa5b91 *R/add_geom.R
 fcc4b2c15f78efb3614b5b1631f0026f *R/angular_distance.R
 f21a68b6aa6deefacc20a6419e6d9d23 *R/arc_ribbon_df.R
 13ff7a52ce33861243486f3ea7c76c87 *R/as_circular_rad.R
@@ -34,7 +34,7 @@ cf4ea4f60e4387b743682be635c72854 *man/CircularBoxplot.Rd
 599cc699c4198160c7e9e6bb32be3e52 *man/CircularLTS.Rd
 cf4a4dfcca8f8305034cb405591c63e3 *man/CircularMAD.Rd
 b5ec743df4ed5dac0a6def892719d60e *man/CircularTukeyDepth.Rd
-4d988b00aaa579493fb33afe57b90652 *man/CircularViolinPlot.Rd
+a996cf0fc0d1abec1ca8ed0b800f85ef *man/CircularViolinPlot.Rd
 d3af3ba441ad7e31c7193cda094146cd *man/EstimateKappa.Rd
 bd001498220cdafbd92226803088bda1 *man/EstimateKappaKo.Rd
 71cfc394de19ed7157a9091f01b44771 *man/EstimateSigma.Rd

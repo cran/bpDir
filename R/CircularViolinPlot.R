@@ -60,6 +60,8 @@ CircularViolinPlot <- function(
     bean_length = 0.035,
     bean_min_size = 0.15,
     bean_max_size = 0.6,
+    bean_outlier_color = "red",
+    bean_outlier_size_factor = 2,
     circle_color = "grey70",
     circle_linewidth = 0.7,
     center_point = TRUE,
@@ -297,7 +299,9 @@ CircularViolinPlot <- function(
       r0,
       outlier_point_color,
       outlier_point_size,
-      outlier_point_alpha
+      outlier_point_alpha,
+      bean_outlier_color = bean_outlier_color,
+      bean_outlier_size_factor = bean_outlier_size_factor
     )
   }
 

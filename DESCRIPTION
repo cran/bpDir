@@ -1,7 +1,7 @@
 Package: bpDir
 Type: Package
 Title: Boxplots for Directional Data
-Version: 0.2.6
+Version: 0.2.7
 Authors@R: person(given = "Davide", family = "Buttarazzi", role = c("aut", "cre"), email = "davidebuttarazzi90@gmail.com")
 Description: Functions for drawing boxplots for data on (the boundary of) a unit circle (i.e., circular and axial data), from Buttarazzi D., Pandolfo G., Porzio G.C. (2018) <doi:10.1111/biom.12889>. The package allows producing also circular violin plots, and includes methods to calculate robust measures of dispersion for circular data.
 License: GPL-2
@@ -11,8 +11,8 @@ Encoding: UTF-8
 Date: 2026-11-08
 RoxygenNote: 7.3.3
 NeedsCompilation: no
-Packaged: 2026-11-08 21:08:30 UTC; davidebuttarazzi
+Packaged: 2026-11-22 19:21:34 UTC; davidebuttarazzi
 Author: Davide Buttarazzi [aut, cre]
 Maintainer: Davide Buttarazzi <davidebuttarazzi90@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-11-09 08:30:09 UTC
+Date/Publication: 2026-11-22 19:40:02 UTC
